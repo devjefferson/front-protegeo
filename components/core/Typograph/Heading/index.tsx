@@ -1,15 +1,18 @@
 import classNames from "classnames"
+import React from "react"
 
-export const Heading = ({title, size}: {
-title: string
-size: "small" | 'medium' | 'large'
+export const Heading = ({children}: {
+children: React.ReactNode
+
 })=>{
 
     return <h1 className={classNames([
-        {
-            'text-small' : size === 'small',
-             'text-[64px]' : size === 'medium',
-              'text-[84px]' : size === 'large'
-        }
-    ])}>{title}</h1>
+        'font-normal',
+        'lg:font-normal',
+        'text-[18px]',
+        'lg:text-[24px]',
+    
+    ])}>{children}</h1>
 }
+
+
