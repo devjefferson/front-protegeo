@@ -35,7 +35,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-5" href="/">
             <Logo />
-            <p className="font-bold text-inherit">GeoAlertas</p>
+            <p className="font-bold text-inherit">ProteGeo</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-7 justify-start ml-4">

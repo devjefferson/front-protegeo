@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import React from "react"
 
-export const Heading = ({children}: {
+export const Subtitle = ({children}: {
 children: React.ReactNode
 
 })=>{

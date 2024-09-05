@@ -1,17 +1,17 @@
 import classNames from "classnames"
 import React from "react"
 
-export const Subtitle = ({children, size = 'medium'}: {
+export const Body = ({children, size = 'normal'}: {
 children: React.ReactNode
-size?: 'small' | 'medium' | 'smallbold' 
+size?: 'small' | 'normal' | 'normalbold' 
 })=>{
 
     return <h1 className={classNames([
         'font-normal lg:font-medium',
         {
-            'text-[16px] lg:text-[14px]' : size === 'small',
-            'text-[14px] lg:text-[12px]' : size === 'medium',
-            'font-bold text-[16px] lg:text-[14px]' : size === 'smallbold',
+            'text-[12px] lg:text-[14px]' : size === 'small',
+            'text-[14px] lg:text-[16px]' : size === 'normal',
+            'font-bold text-[14px] lg:text-[16px]' : size === 'normalbold',
             
         }
     ])}>{children}</h1>

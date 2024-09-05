@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import React from "react"
 
-export const Subtitle = ({children, size = 'medium'}: {
+export const Heading = ({children, size = 'medium'}: {
 children: React.ReactNode
 size?: 'small' | 'medium' | 'large' | 'xlarge'
 })=>{
