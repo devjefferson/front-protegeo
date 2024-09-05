@@ -1,61 +1,61 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
+  name: "GeoAlertas",
   description: "Make beautiful websites regardless of your design experience.",
   navItems: [
     {
-      label: "Home",
+      label: "Login",
+      href: "/login",
+    },
+    {
+      label: "Mapa",
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Noticias",
+      href: "/noticias",
     },
     {
       label: "Blog",
       href: "/blog",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "Sobre Nós",
+      href: "/sobrenos",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Perfil",
+      href: "/perfil",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Favoritos/Lista de Regiões",
+      href: "/favotiros ",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Reportar Incidente",
+      href: "/report",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "Histórico de Incidentes",
+      href: "/historico",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "Sobre Nós",
+      href: "/sobrenos",
     },
     {
-      label: "Settings",
-      href: "/settings",
+      label: "Configurações",
+      href: "/configuracoes",
     },
     {
-      label: "Help & Feedback",
+      label: "Ajuda e Suporte",
       href: "/help-feedback",
     },
     {
-      label: "Logout",
+      label: "Sair",
       href: "/logout",
     },
   ],

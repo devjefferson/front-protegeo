@@ -1,20 +1,16 @@
 'use client'
 import MapboxExample from "@/components/Map";
-import { Heading } from "@/components/core/Typograph/Heading";
-import { Subtitle } from "@/components/core/Typograph/Subtitle";
+import { Subtitle } from "@/components/core/Typograph/Heading";
+import { Heading } from "@/components/core/Typograph/Subtitle";
 import { Button } from "@nextui-org/button";
 import { useState } from "react";
 
-export default function Home() {
+export default function Mapa() {
   const [coord, setCoord] = useState<number[]>([-43.566333,-22.903654])
   const [list, setList] = useState(true)
   return (
 <div className="relative">
 <div className='absolute top-10 right-1/2 z-10 text-red-500'>
-
-
-<Subtitle size='small'> Qualquer coisa </Subtitle>
-
 </div>
 <section className=" flex justify-between">
   <div className="flex relative w-full h-full">

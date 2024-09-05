@@ -3,16 +3,16 @@ import React from "react"
 
 export const Subtitle = ({children, size = 'medium'}: {
 children: React.ReactNode
-size?: 'small' | 'medium' | 'large' | 'xlarge'
+size?: 'small' | 'medium' | 'smallbold' 
 })=>{
 
     return <h1 className={classNames([
         'font-normal lg:font-medium',
         {
-            'text-[20px] lg:text-[28px]' : size === 'small',
-            'text-[28px] lg:text-[64px]' : size === 'medium',
-            'text-[40px] lg:text-[84px]' : size === 'large',
-            'text-[48px] lg:text-[96px]' : size === 'xlarge',
+            'text-[16px] lg:text-[14px]' : size === 'small',
+            'text-[14px] lg:text-[12px]' : size === 'medium',
+            'font-bold text-[16px] lg:text-[14px]' : size === 'smallbold',
+            
         }
     ])}>{children}</h1>
 }

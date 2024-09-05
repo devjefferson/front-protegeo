@@ -45,7 +45,7 @@ export default function RootLayout({
           <div className="relative flex flex-col h-screen">
             <Navbar />
               {children}
-            <footer className="w-full flex items-center justify-center py-3">
+            <footer className="w-full flex items-center justify-center my-5 lg:my-7">
            Unisuam
             </footer>
           </div>

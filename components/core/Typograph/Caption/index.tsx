@@ -7,10 +7,9 @@ children: React.ReactNode
 })=>{
 
     return <h1 className={classNames([
-        'font-normal',
-        'lg:font-normal',
-        'text-[18px]','lg:text-[24px]',
+        'font-semibold',
+        'lg:font-bold',
+        'text-[10px]','lg:text-[12px]',
     
     ])}>{children}</h1>
 }
-
