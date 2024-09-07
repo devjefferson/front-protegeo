@@ -1,15 +1,20 @@
 import classNames from "classnames"
 import React from "react"
 
-export const Caption = ({children}: {
+export const Caption = ({children,className}: {
 children: React.ReactNode
-
+className?:string
 })=>{
 
-    return <h1 className={classNames([
-        'font-semibold',
-        'lg:font-bold',
+    return <p className={classNames([
+        'font-normal',
+        'lg:font-normal',
         'text-[10px]','lg:text-[12px]',
+        'text-neutral-500',
+        'uppercase',
+        className
+
     
-    ])}>{children}</h1>
+    ])}
+    >{children}</p>
 }
