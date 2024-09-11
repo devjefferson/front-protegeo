@@ -3,9 +3,19 @@ import { Caption } from "../core/Typograph/Caption"
 import { Body } from "../core/Typograph/Body"
 
 //function CardInfo (){}
-export const CardInfo = ({cityOfState}:{cityOfState:string}) => {
+export const CardInfo = ({
+    cityOfState, 
+    onClick, 
+    street,
+    description
+}:{
+    cityOfState:string
+    street: string
+    description: string
+    onClick: ()=> void
+}) => {
     return (
-        <div className={classNames([
+        <div onClick={onClick} className={classNames([
             'flex',
             'shadow-md',
             'bg-white', 'p-3', 'w-[431px]','gap-2'])}>
@@ -25,11 +35,11 @@ export const CardInfo = ({cityOfState}:{cityOfState:string}) => {
             </div> 
             <div>
                 <Caption className="text-[9px] font-normal capitalize -mb-1">Endereço</Caption>
-                <Body size="normal">Rua Augusto Vasconcelos</Body>
+                <Body size="normal">{street}</Body>
             </div> 
             <div>
                 <Caption className="text-[9px] font-medium capitalize">Descrição</Caption>
-                <Body className="text-[9px] font-light">"Bairro de Campo Grande sofre com alagamento, transformando ruas em rios e causando transtornos para os moradores."</Body>
+                <Body className="text-[9px] font-light">{description}</Body>
             </div> 
             <div className="flex justify-end">
                 <Body className="font-light text-[11px]" >Mais Detalhes{'-->'}</Body>

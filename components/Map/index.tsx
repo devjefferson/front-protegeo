@@ -2,30 +2,31 @@
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { dataCoord } from './coord';
 
 const MapboxExample = ({coord}: {coord: number[]}) => {
-  const mapContainerRef = useRef();
-  const mapRef = useRef();
+  const mapContainerRef = useRef() as any
+  const mapRef  = useRef() as any
 
-
+  
   useEffect(() => {
     mapboxgl.accessToken = 'pk.eyJ1IjoibmRpZXN1cGVyIiwiYSI6ImNsbDN1bnpxZzAwMmQzcm53YjA5dW1xM24ifQ.R5njF3uIvhR9L7a-FtTVMg';
 
-    mapRef.current = new mapboxgl.Map({
+    mapRef.current  = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/streets-v12',
-      center: coord,
+      center: coord as any ,
       zoom: 10
-    });
+    }) as any
 
     mapRef.current.on('load', () => {
       mapRef.current.addSource('earthquakes', {
         type: 'geojson',
-        data: 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson',
+        data: dataCoord,
         cluster: true,
         clusterMaxZoom: 14,
         clusterRadius: 50
-      });
+      }) 
 
       mapRef.current.addLayer({
         id: 'clusters',
@@ -62,7 +63,7 @@ const MapboxExample = ({coord}: {coord: number[]}) => {
         layout: {
           'text-field': ['get', 'point_count_abbreviated'],
           'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-          'text-size': 12
+          'text-size': 14
         }
       });
 
@@ -74,20 +75,21 @@ const MapboxExample = ({coord}: {coord: number[]}) => {
         paint: {
           'circle-color': '#11b4da',
           'circle-radius': 4,
-          'circle-stroke-width': 1,
+
+          'circle-stroke-width': 2,
           'circle-stroke-color': '#fff'
         }
       });
 
       // inspect a cluster on click
-      mapRef.current.on('click', 'clusters', (e) => {
+      mapRef.current.on('click', 'clusters', (e: any) => {
         const features = mapRef.current.queryRenderedFeatures(e.point, {
           layers: ['clusters']
         });
         const clusterId = features[0].properties.cluster_id;
         mapRef.current
           .getSource('earthquakes')
-          .getClusterExpansionZoom(clusterId, (err, zoom) => {
+          .getClusterExpansionZoom(clusterId, (err: string, zoom: number) => {
             if (err) return;
 
             mapRef.current.easeTo({
@@ -97,21 +99,19 @@ const MapboxExample = ({coord}: {coord: number[]}) => {
           });
       });
 
-      mapRef.current.on('click', 'unclustered-point', (e) => {
+      mapRef.current.on('click', 'unclustered-point', (e: any) => {
         const coordinates = e.features[0].geometry.coordinates.slice();
-        const mag = e.features[0].properties.mag;
-        const tsunami = e.features[0].properties.tsunami === 1 ? 'yes' : 'no';
+        const titulo = e.features[0].properties.titulo;
+        const descricao = e.features[0].properties.descricao
 
-        // Ensure that if the map is zoomed out such that
-        // multiple copies of the feature are visible, the
-        // popup appears over the copy being pointed to.
+
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
           coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
 
         new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML(`magnitude: ${mag}<br>TESTE?: ${tsunami}`)
+          .setHTML(`${titulo}<br/> <br/> ${descricao}`)
           .addTo(mapRef.current);
       });
 
@@ -136,7 +136,7 @@ const MapboxExample = ({coord}: {coord: number[]}) => {
     console.log('mudou')
   },[coord])
 
-  return <div id="map" ref={mapContainerRef} style={{ height: '800px' , width: '99.8%' }}></div>;
+  return <div id="map" ref={mapContainerRef as any} style={{ height: '700px' , width: '99.8%' }}></div>;
 };
 
 export default MapboxExample;
