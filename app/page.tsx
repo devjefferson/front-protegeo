@@ -22,7 +22,7 @@ export default function Mapa() {
       </div>
       {<MapboxExample coord={coord} />}
       </div>
-    {!list && <div  className= " flex flex-col mx-2 gap-4 h-[700px] w-[700px] overflow-y-scroll overflow-x-hidden  items-center ">
+    {!list && <div  className= "flex flex-col mx-2 gap-4 h-[700px] w-[700px] overflow-y-scroll overflow-x-hidden  items-center ">
       {dataCoord.features.map((item)=>{
 
         return  <CardInfo description={item.properties.descricao} street={item.properties.endereco} cityOfState={item.properties.titulo} key={item.properties.id} onClick={()=> setCoord(item.geometry.coordinates)} />

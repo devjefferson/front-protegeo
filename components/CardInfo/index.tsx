@@ -16,11 +16,12 @@ export const CardInfo = ({
 }) => {
     return (
         <div onClick={onClick} className={classNames([
+            'cursor-pointer',
             'flex',
             'shadow-md',
-            'bg-white', 'p-3', 'w-[431px]','gap-2'])}>
+            'bg-white', 'p-3', 'lg:w-[431px]','gap-2'])}>
             <div className={classNames([
-                'min-w-[158px]', 'h-full'
+                'min-w-[158px]', 'h-full', 'lg:flex hidden'
             ])}>
                 <img className="object-cover h-full" src="/map.png" alt="" />
             </div>
@@ -30,7 +31,6 @@ export const CardInfo = ({
                 'gap-2',
             ])}>
             <div>
-                <Caption className="-mb-2">bairro - cidade</Caption>
                     <Body size="normal">{cityOfState}{/*Campo grande - Rio de janeiro*/}</Body>
             </div> 
             <div>
