@@ -3,6 +3,7 @@ import  AccordionFaq  from "@/components/AccordionFaq";
 import { CardInfo } from "@/components/CardInfo";
 import MapboxExample from "@/components/Map";
 import { dataCoord } from "@/components/Map/coord";
+import Slider from "@/components/Slider";
 import { Body } from "@/components/core/Typograph/Body";
 import { Button } from "@nextui-org/button";
 import { useState } from "react";
@@ -32,6 +33,48 @@ export default function Mapa() {
     
     </div>}
     </section>
+    <Slider slides={[
+  {
+    category: "Alagamento",
+    title: "Alagamento em Área Urbana",
+    description: "Alerta de alagamento na região central devido a chuvas intensas. Evite transitar pelas principais avenidas.",
+    image: "https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    link: "#",
+    buttonText: "Saiba mais",
+  },
+  {
+    category: "Enchente",
+    title: "Enchente Próxima ao Rio",
+    description: "Níveis do rio subiram acima do limite de segurança. Moradores próximos devem buscar abrigo.",
+    image: "https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    link: "#",
+    buttonText: "Informações de evacuação",
+  },
+  {
+    category: "Enchente",
+    title: "Alerta de Inundação",
+    description: "Possibilidade de inundações em áreas baixas devido ao aumento do nível do rio. Fique atento aos avisos das autoridades.",
+    image: "https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    link: "#",
+    buttonText: "Detalhes",
+  },
+  {
+    category: "Alagamento",
+    title: "Alagamento em Estrada",
+    description: "Estrada bloqueada por alagamento. Desvie sua rota para garantir segurança.",
+    image: "https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    link: "#",
+    buttonText: "Rotas alternativas",
+  },
+  {
+    category: "Enchente",
+    title: "Enchente em Zona Rural",
+    description: "Áreas rurais próximas ao rio enfrentam enchentes. Agricultores devem tomar precauções.",
+    image: "https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+    link: "#",
+    buttonText: "Ações recomendadas",
+  },
+]} />
 
     <AccordionFaq questions={[
   {
