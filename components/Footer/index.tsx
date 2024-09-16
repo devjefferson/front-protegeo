@@ -1,5 +1,4 @@
 import React from 'react';
-import { Heading } from '../core/Typograph/Heading';
 import { Body } from '../core/Typograph/Body';
 
 const Footer = () => {
