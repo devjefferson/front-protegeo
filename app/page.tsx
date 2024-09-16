@@ -1,6 +1,7 @@
 'use client'
 import  AccordionFaq  from "@/components/AccordionFaq";
 import { CardInfo } from "@/components/CardInfo";
+import FeatureSection from "@/components/FeatureSection";
 import MapboxExample from "@/components/Map";
 import { dataCoord } from "@/components/Map/coord";
 import Slider from "@/components/Slider";
@@ -8,6 +9,26 @@ import { Body } from "@/components/core/Typograph/Body";
 import { Button } from "@nextui-org/button";
 import { useState } from "react";
 
+const features = [
+  {
+    title: 'Alertas de enchentes',
+    description: 'Receba alertas em tempo real sobre áreas afetadas por enchentes próximas a você.',
+    iconColor: 'blue',
+    iconPath: 'M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z'
+  },
+  {
+    title: 'Notificações de incêndios',
+    description: 'Saiba quando incêndios florestais estão ameaçando a sua região.',
+    iconColor: 'red',
+    iconPath: 'M4.632 3.533A2 2 0 016.577 2h6.846a2 2 0 011.945 1.533l1.976 8.234A3.489 3.489 0 0016 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234z'
+  },
+  {
+    title: 'Monitoramento de alagamentos',
+    description: 'Receba alertas e monitore o nível dos rios e chuvas que podem causar alagamentos.',
+    iconColor: 'yellow',
+    iconPath: 'M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z'
+  }
+];
 export default function Mapa() {
   const [coord, setCoord] = useState<number[]>([-43.566333,-22.903654])
   const [list, setList] = useState(true)
@@ -33,6 +54,12 @@ export default function Mapa() {
     
     </div>}
     </section>
+    <FeatureSection
+      title="Segurança em tempo real"
+      description="Mantenha-se seguro com alertas precisos de desastres naturais"
+      features={features}
+      imageUrl="/istockphoto-1333043586-612x612.jpg"
+    />
     <Slider slides={[
   {
     category: "Alagamento",
