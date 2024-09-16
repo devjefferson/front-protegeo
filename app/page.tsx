@@ -37,9 +37,9 @@ export default function Mapa() {
 <div className='absolute top-10 right-1/2 z-10 text-red-500'>
 </div>
 
-<section className=" flex justify-between">
+<section className="flex justify-between">
   <div className="flex relative w-full h-full">
-  <div className=" flex absolute top-2 right-2 z-10 ">
+  <div className="flex absolute top-2 right-2 z-10 ">
       <Button onClick={()=> setList((e)=> !e)}>{list ? <Body size="small">Listagem</Body> : 'Mapa'}</Button>
 
       </div>

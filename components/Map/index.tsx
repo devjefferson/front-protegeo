@@ -111,7 +111,16 @@ const MapboxExample = ({coord}: {coord: number[]}) => {
 
         new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML(`<p style='color:black'>${titulo}<br/> <br/> ${descricao}</p>`)
+          .setHTML(` 
+            <div class="p-4">
+                <h5 class="mb-2 text-slate-800 text-xl font-semibold">
+                    ${titulo}
+                </h5>
+                <p class="text-slate-600 leading-normal font-normal">
+                  ${descricao}
+                </p>
+            </div>
+       `)
           .addTo(mapRef.current);
       });
 
