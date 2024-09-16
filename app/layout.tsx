@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -45,9 +46,9 @@ export default function RootLayout({
           <div className="relative flex flex-col h-screen">
             <Navbar />
               {children}
-            <footer className="w-full flex items-center justify-center my-5 lg:my-7">
-           Unisuam
-            </footer>
+            <Footer />
+           
+        
           </div>
         </Providers>
       </body>
