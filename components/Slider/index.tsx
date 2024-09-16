@@ -53,12 +53,12 @@ const Slider = ({ slides }: any) => {
         ))}
       </div>
 
-      <div className="flex justify-between w-12 mx-auto pb-2">
+      <div className="flex  gap-2 mx-auto pb-2 justify-center">
         {slides.map((_:any, index:any) => (
           <button
             key={index}
             onClick={() => handleButtonClick(index)}
-            className={`rounded-full w-4 pb-2 ${index === currentSlide ? "bg-purple-800" : "bg-purple-400"}`}
+            className={`rounded-full h-4 w-4 pb-2 ${index === currentSlide ? "bg-purple-800" : "bg-purple-400"}`}
           ></button>
         ))}
       </div>
