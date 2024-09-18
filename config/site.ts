@@ -10,16 +10,13 @@ export const siteConfig = {
     },
     {
       label: "Mapa",
-      href: "/",
+      href: "/mapa",
     },
     {
       label: "Noticias",
       href: "/noticias",
     },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
+  
     {
       label: "Sobre Nós",
       href: "/sobrenos",

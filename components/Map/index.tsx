@@ -145,7 +145,7 @@ const MapboxExample = ({coord}: {coord: number[]}) => {
     console.log('mudou')
   },[coord])
 
-  return <div id="map" ref={mapContainerRef as any} style={{ height: '700px' , width: '99.8%' }}></div>;
+  return <div id="map" ref={mapContainerRef as any} style={{ height: `calc(100vh - 64px)` , width: '99.8%' }}></div>;
 };
 
 export default MapboxExample;

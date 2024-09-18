@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import "../styles/globals.css";
 
 import { Providers } from "./providers";
 
@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: {
@@ -42,13 +43,14 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
+        <ToastContainer />
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
+         
             <Navbar />
               {children}
-            <Footer />
-           
-        
+       
+          
           </div>
         </Providers>
       </body>
