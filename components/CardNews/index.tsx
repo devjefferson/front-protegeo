@@ -4,16 +4,16 @@ import { Heading } from "../core/Typograph/Heading"
 
 //function CardInfo (){}
 export const CardNews = ({
-    title, 
+    titlenews, 
     onClick, 
-    description,
+    news,
 }:{
-    title:string
-    description: string
+    titlenews:string
+    news: string
     onClick: ()=> void
 }) => {
     return (
-        <div className={classNames([
+        <div onClick={onClick} className={classNames([
             'cursor-pointer',
             'flex',
             'flex-col',
@@ -22,7 +22,7 @@ export const CardNews = ({
             'bg-white',
             'lg:w-[262px]',
             ])}>
-            <div onClick={onClick} className={classNames([
+            <div className={classNames([
                 'min-w-[158px]', 'h-full', 'lg:flex hidden',
             ])}>
                     <img className="object-cover h-[148px] w-[262px]" src="/public/image.png" alt="" />
@@ -35,10 +35,10 @@ export const CardNews = ({
                 'py-[24px]',
             ])}>
             <div>
-            <Heading size="small" className="text-clip overflow-hidden line-clamp-2 w-full">{title}Título do material em até duas ou três linhas </Heading> 
+            <Heading size="small" className="text-clip overflow-hidden line-clamp-2 w-full">{titlenews}</Heading> 
             </div> 
             <div>
-                <Body size="small" className="text-clip overflow-hidden line-clamp-4 w-full."> {description}Descrição rápida do material em até quatro linhas quebradas com reticências no final.Descrição rápida do material em até quatro linhas quebradas com reticências no final.Descrição rápida do material em até quatro linhas quebradas com reticências no final.</Body>
+                <Body size="small" className="text-clip overflow-hidden line-clamp-4 w-full."> {news}</Body>
             </div> 
             </div>
         </div>

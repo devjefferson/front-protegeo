@@ -10,7 +10,7 @@ className?:string
         'font-normal',
         'lg:font-normal',
         'text-[18px]','lg:text-[24px]',
-    
+        className
     ])}>{children}</h1>
 }
 
