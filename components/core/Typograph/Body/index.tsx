@@ -8,7 +8,7 @@ className?:string
 })=>{
 
     return <p className={classNames([
-        'font-medium lg:font-medium','text-neutral-700',
+        'font-normal lg:font-normal','text-neutral-700',
         {
             'text-[12px] lg:text-[14px]' : size === 'small',
             'text-[14px] lg:text-[16px]' : size === 'normal',

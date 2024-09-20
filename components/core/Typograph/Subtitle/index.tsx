@@ -1,9 +1,9 @@
 import classNames from "classnames"
 import React from "react"
 
-export const Subtitle = ({children}: {
+export const Subtitle = ({children,className}: {
 children: React.ReactNode
-
+className?:string
 })=>{
 
     return <h1 className={classNames([
