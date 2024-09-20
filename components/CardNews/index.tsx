@@ -18,7 +18,6 @@ export const CardNews = ({
             'flex',
             'flex-col',
             'shadow-md',
-            'ml-[500px]',
             'bg-white',
             'lg:w-[262px]',
             ])}>
