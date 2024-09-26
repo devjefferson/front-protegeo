@@ -38,13 +38,14 @@ export const CardContent = ({
                 'w-[720px]', 
                 'my-[140px]',
                 'pl-[160px]',
+                'pr-[40px]',
                 'gap-[32px]',
             )}>
                 <div>
-                    <Heading size="medium" className="">{titlecontent}</Heading>
+                    <Heading size="medium" className="line-clamp-1 overflow-hidden">{titlecontent}</Heading>
                 </div> 
                 <div>
-                    <Body size="normal" className="overflow-hidden line-clamp-2">{content}</Body>
+                    <Body size="normal" className="line-clamp-3 overflow-hidden ">{content}</Body>
                 </div> 
                 <div onClick={onClick} className="cursor-pointer w-[135px] h-[48px] bg-zinc-700 flex items-center">
                     <Body size="normalbold" className="font-light text-[11px] text-white ml-3">Saber mais{' ->'}</Body>
