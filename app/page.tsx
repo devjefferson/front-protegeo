@@ -29,6 +29,8 @@ export default function Mapa() {
   return (
 <div className="relative">
 <div className='absolute top-10 right-1/2 z-10 text-red-500'>
+
+
 </div>
 
 
