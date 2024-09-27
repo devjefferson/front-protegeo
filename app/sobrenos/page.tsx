@@ -1,39 +1,28 @@
-'use client'
-import { CardNews } from "@/components/CardNews";
-
-
+import { ScrollDefault } from "@/components/ScrollDefault";
 
 export default function teste() {
-    return (
-      <div className="flex gap-3 justify-evenly ">
-       
-        {[
+    const data = [
+   
   {
-    "title": "titlenews1",
-    "new": "1",
+    "location": "Centro de São Paulo - Bacia do Anhangabaú",
+    "details": "Áreas mais afetadas: Anhangabaú, Praça da Sé, Av. 23 de Maio Média de dias com enchentes por ano: 10 a 15 dias Volume de água durante enchentes: Pode superar 50 mm em 1 hora durante tempestades fortes Danos estimados (2019): R$ 400 milhões devido a perdas econômicas causadas por enchentes no centro da cidade",
+    "text":"O centro de São Paulo, principalmente nas áreas próximas ao Vale do Anhangabaú e à Avenida 23 de Maio, é vulnerável a enchentes durante o verão devido à sua baixa altitude e à urbanização intensa. Destaques: Inundações rápidas durante tempestades fortes Prejudica o trânsito em uma das principais vias da cidade Risco elevado de alagamentos em áreas comerciais",
     "date": "2024-09-20",
     "summary": "Resumo do artigo 1",
     "content": "Conteúdo completo do artigo 1"
-  },
-  {
-    "title": "titlenews2",
-    "new": "0",
-    "date": "2024-09-18",
-    "summary": "Resumo do artigo 2",
-    "content": "Conteúdo completo do artigo 2"
   }
 ]
-.map((item)=><CardNews
-        onClick={()=>console.log('ok')}
-        titlenews={item.title}
-        news={item.content}
-        key={item.title}
+return(
+    <>
+        {data.map((item)=>(
+            <ScrollDefault
+                location={item.location}
+                details={item.details}
+                text={item.text}
+                key={item.content}
+                onClick={()=>console.log('ok')}
         />
-      )}
-      
-       
-         
-      </div>
-      
-    );
-  }
+        ))}
+        </>
+);
+}
