@@ -1,9 +1,10 @@
 import classNames from "classnames"
 import React from "react"
 
-export const Heading = ({children, size = 'medium'}: {
+export const Heading = ({children, size ,className}: {
 children: React.ReactNode
 size?: 'small' | 'medium' | 'large' | 'xlarge'
+className?:string
 })=>{
 
     return <h1 className={classNames([
@@ -13,7 +14,7 @@ size?: 'small' | 'medium' | 'large' | 'xlarge'
             'text-[28px] lg:text-[64px]' : size === 'medium',
             'text-[40px] lg:text-[84px]' : size === 'large',
             'text-[48px] lg:text-[96px]' : size === 'xlarge',
-        }
+        },classNames
     ])}>{children}</h1>
 }
 
