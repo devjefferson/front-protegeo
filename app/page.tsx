@@ -4,6 +4,7 @@ import FeatureSection from "@/components/FeatureSection";
 import Footer from "@/components/Footer";
 
 import Slider from "@/components/Slider";
+import { Tutorial } from "@/components/Tutorial";
 
 const features = [
   {
@@ -40,6 +41,7 @@ export default function Mapa() {
       features={features}
       imageUrl="/istockphoto-1333043586-612x612.jpg"
     />
+    <Tutorial/>
     <Slider slides={[
   {
     category: "Alagamento",

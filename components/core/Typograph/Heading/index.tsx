@@ -14,7 +14,7 @@ className?:string
             'text-[28px] lg:text-[32px]' : size === 'medium',
             'text-[40px] lg:text-[64px]' : size === 'large',
             'text-[48px] lg:text-[96px]' : size === 'xlarge',
-        },classNames
+        },className
     ])}>{children}</h1>
 }
 
