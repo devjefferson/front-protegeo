@@ -22,7 +22,9 @@ export const ScrollDefault = ({
             'justify-center',
             'items-center',
             'max-h-[1422px]',
-            'max-w-[1440px]',
+            'w-full',
+            'pb-5'
+         
 
             ])}>
                 
@@ -90,7 +92,7 @@ export const ScrollDefault = ({
                
                </div>
            
-               <div  className={classNames([
+               <button  className={classNames([
                 'flex',
                 'flex-row',
                 'justify-center',
@@ -99,9 +101,11 @@ export const ScrollDefault = ({
                 'h-[59px]',
                 'w-[359px]',
                 'cursor-pointer',
-               ])}>
+               ])}
+               
+               onClick={onClick}>
                <Body size="normal">Voltar</Body>
-               </div>
+               </button>
             </div>
     );
 };

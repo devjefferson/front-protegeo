@@ -83,6 +83,7 @@ export const LoginForm = () => {
       <div className="flex  justify-between gap-8">
       <Button
           disabled={form.formState.isSubmitting}
+          isLoading={form.formState.isSubmitting}
             className='rounded-md w-full'
           type="submit"
        

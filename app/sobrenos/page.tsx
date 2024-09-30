@@ -1,6 +1,9 @@
+'use client'
 import { ScrollDefault } from "@/components/ScrollDefault";
+import { useRouter } from "next/navigation";
 
 export default function teste() {
+  const router = useRouter()
     const data = [
    
   {
@@ -20,7 +23,7 @@ return(
                 details={item.details}
                 text={item.text}
                 key={item.content}
-                onClick={()=>console.log('ok')}
+                onClick={()=> router.back()}
         />
         ))}
         </>
