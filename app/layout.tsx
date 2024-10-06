@@ -37,8 +37,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const [ CurrentUser] = await Promise.all([ getCurrentUser()]);
-  
-
 
   return (
     <html suppressHydrationWarning lang="en">

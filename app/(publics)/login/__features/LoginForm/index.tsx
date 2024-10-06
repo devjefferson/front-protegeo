@@ -23,11 +23,6 @@ export const LoginForm = () => {
   const handleSubmit: SubmitHandler<any> = async (data) => {
 
 
-    if(!window.localStorage.getItem('DUSER')){
-      error("Não existe usuário temporário em nossa base de dados")
-      return
-    }
-
     const response = await signIn('credentials', {
       ...data,
       redirect: false,

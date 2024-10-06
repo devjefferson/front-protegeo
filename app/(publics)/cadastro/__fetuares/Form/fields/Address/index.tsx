@@ -22,8 +22,10 @@ export default function ConsumerFormEditAddress({
   ) => {
     try {
       const zipCode = (e.currentTarget.value || '').replace(/\D/g, '')
+
       if (zipCode.length === 8) {
         const response = await serviceZipCode(zipCode)
+
         if (response.ok) {
           const address: TGetAddressByCodeResponse = response.data
           form.setValue('zipCode', address.cep)
