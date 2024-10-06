@@ -1,15 +1,17 @@
-import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
-import clsx from "clsx";
-import "../styles/globals.css";
+import '@/styles/globals.css';
+import { Metadata, Viewport } from 'next';
+import clsx from 'clsx';
+import '../styles/globals.css';
 
-import { Providers } from "./providers";
+import { Providers } from './providers';
 
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/Footer";
-import { ToastContainer } from "react-toastify";
+import { siteConfig } from '@/config/site';
+import { fontSans } from '@/config/fonts';
+import { Navbar } from '@/components/navbar';
+import { ToastContainer } from 'react-toastify';
+import getCurrentUser from '@/services/auth/customer/getCurrentUser';
+import { getMe } from '@/services/me';
+import { TCustomer } from '@/models/customer';
 
 export const metadata: Metadata = {
   title: {
@@ -18,40 +20,39 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico',
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [ CurrentUser] = await Promise.all([ getCurrentUser()]);
+  
+
+
   return (
     <html suppressHydrationWarning lang="en">
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
+          'min-h-screen bg-background font-sans antialiased',
           fontSans.variable,
         )}
       >
         <ToastContainer />
-        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="relative flex flex-col h-screen">
-         
-            <Navbar />
-              {children}
-       
-          
-          </div>
+        <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
+          <Navbar data={CurrentUser as TCustomer} />
+          {children}
         </Providers>
       </body>
     </html>

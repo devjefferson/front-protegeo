@@ -15,24 +15,24 @@ import { setMe } from '@/services/me'
 
 
 
-export default function ConsumerForm() {
+export default function ConsumerForm({data}:{data: TCustomer}) {
   const { back, push } = useRouter()
   const {success} = useMessage()
   const form = useForm<TCustomer>({
     resolver: zodResolver(ConsumerFormEditSchema),
-    defaultValues: {},
+    defaultValues: data,
   })
 
   const handleSubmit: SubmitHandler<TCustomer> = async (data) => {
     await setMe(data)
-    success("cadastrado realizado com sucesso.")
-    push('/login')
+    success("cadastrado editado com sucesso.")
+    push('/perfil')
   }
 
   return (
     <div className='py-16'>
       <div className="mb-10">
-        <h1 className={title()}>Formulário de cadastro</h1>
+        <h1 className={title()}>Edição de cadastro</h1>
       </div>
       <form
         onSubmit={form.handleSubmit(handleSubmit)}
@@ -85,7 +85,7 @@ export default function ConsumerForm() {
            type='submit'
             className='w-full'
           >
-            Cadastrar
+            Editar
           </Button>
         </div>
       </form>

@@ -14,12 +14,12 @@ export default function Page(){
   return   (<section className="flex justify-between">
     <div className="flex relative w-full h-full">
     <div className="flex absolute top-2 right-2 z-10 ">
-        <Button onClick={()=> setList((e)=> !e)}>{list ? <Body size="small">Listagem</Body> : 'Mapa'}</Button>
+        <Button onClick={()=> setList((e)=> !e)}>{list ? 'Listagem' : 'Mapa'}</Button>
   
         </div>
         {<MapboxExample coord={coord} />}
         </div>
-      {!list && <div  className= "flex flex-col mx-2 gap-4 h-[700px] w-[700px] overflow-y-scroll overflow-x-hidden  items-center ">
+      {!list && <div  className= "flex flex-col mx-2 gap-4 h-[750px] w-[700px] overflow-y-scroll overflow-x-hidden  items-center ">
         {dataCoord.features.map((item)=>{
   
           return  <CardInfo description={item.properties.descricao} street={item.properties.endereco} cityOfState={item.properties.titulo} key={item.properties.id} onClick={()=> setCoord(item.geometry.coordinates)} />

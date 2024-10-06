@@ -26,7 +26,7 @@ export const Input = React.forwardRef(
   ) => {
     return (
       <div className="relative w-full">
-        <label htmlFor={id} className="bg-white pr-1 pl-1 transition-all">
+        <label htmlFor={id} className=" pr-1 pl-1 transition-all">
           {label}
         </label>
         <input

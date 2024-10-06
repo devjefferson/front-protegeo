@@ -1,14 +1,11 @@
 import { User } from "next-auth";
+import { getMe as me } from '@/services/me';
 
 export default async function getMe(token: string): Promise<User | undefined> {
   try {
     if (token === "12345689") {
-      const user = {
-        id: "154879",
-        fullName: "Jefferson da fonseca martins",
-        email: "drpcscan@gmail.com",
-        token,
-      };
+      const user = await me()
+      
       return {
         ...user,
       };

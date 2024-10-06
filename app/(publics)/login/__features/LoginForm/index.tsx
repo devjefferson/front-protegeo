@@ -10,7 +10,7 @@ import { UserLoginSchema } from './schema'
 import useMessage from '@/hooks/useMessage'
 import { Input } from '@/components/Input'
 import { Button } from '@nextui-org/button'
-import { signIn } from 'next-auth/react'
+import { getSession, signIn } from 'next-auth/react'
 
 
 export const LoginForm = () => {
@@ -33,9 +33,11 @@ export const LoginForm = () => {
       redirect: false,
     })
 
+
+
     if (response?.ok) {
       success('Login realizado com sucesso!')
-      router.push('/perfil')
+      window.location.href = '/perfil'
     } else {
       error('Email ou senha errado!')
     }

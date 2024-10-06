@@ -1,10 +1,8 @@
 "use client";
-import { button } from "@/components/core/button";
-import { Button } from "@nextui-org/button";
+
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { signOut } from "next-auth/react";
-import Image from "next/image";
-import { CloseButton, Icons } from "react-toastify";
+
 
 export default function Perfil({ data }: any) {
   const { mutate } = useMutation({
@@ -15,20 +13,38 @@ export default function Perfil({ data }: any) {
   });
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between py-24 px-4">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          {data.fullName}
-        </p>
+    <main className="flex min-h-screen flex-col  px-4">
+        <div className="h-48 container  lg:h-auto ">
+          <h1 className="text-2xl font-bold mb-6">Dashboard Overview</h1>
 
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-        <Button  onClick={() => mutate()}>
-          Sair
-        </Button>
+          {/* Stats Cards */}
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-800">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h2 className="text-xl  font-bold">Total Users</h2>
+              <p className="text-3xl mt-2">1,234</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h2 className="text-xl  font-bold">Total Sales</h2>
+              <p className="text-3xl mt-2">$12,345</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h2 className="text-xl font-bold">New Orders</h2>
+              <p className="text-3xl mt-2">56</p>
+            </div>
+          </div>
+
+          {/* Charts Section */}
+          <div className="mt-8 " >
+            <h2 className="text-xl font-bold mb-4">Performance Chart</h2>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              {/* Placeholder for chart */}
+              <div className="w-full h-64 bg-gray-200 text-gray-800">Chart goes here</div>
+            </div>
+          </div>
+  
         </div>
-      </div>
-
-     
     </main>
   );
 }
