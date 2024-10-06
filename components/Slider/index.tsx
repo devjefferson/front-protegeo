@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 const Slider = ({ slides }: any) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  console.log("slides", slides)
 
   useEffect(() => {
     const interval = setInterval(() => {
