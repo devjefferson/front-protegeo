@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Hero } from '@/components/Hero';
 
 import Slider from '@/components/Slider';
+import { servicesPosts } from '@/services/post';
 
 const features = [
   {
@@ -32,7 +33,8 @@ const features = [
       'M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z',
   },
 ];
-export default function Mapa() {
+export default async function Mapa() {
+  const [data] = await Promise.all([servicesPosts()]);
   return (
     <>
         <Hero
@@ -51,58 +53,7 @@ export default function Mapa() {
         imageUrl="/istockphoto-1333043586-612x612.jpg"
       />
       <Slider
-        slides={[
-          {
-            category: 'Alagamento',
-            title: 'Alagamento em Área Urbana',
-            description:
-              'Alerta de alagamento na região central devido a chuvas intensas. Evite transitar pelas principais avenidas.',
-            image:
-              'https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-            link: '#',
-            buttonText: 'Saiba mais',
-          },
-          {
-            category: 'Enchente',
-            title: 'Enchente Próxima ao Rio',
-            description:
-              'Níveis do rio subiram acima do limite de segurança. Moradores próximos devem buscar abrigo.',
-            image:
-              'https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-            link: '#',
-            buttonText: 'Informações de evacuação',
-          },
-          {
-            category: 'Enchente',
-            title: 'Alerta de Inundação',
-            description:
-              'Possibilidade de inundações em áreas baixas devido ao aumento do nível do rio. Fique atento aos avisos das autoridades.',
-            image:
-              'https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-            link: '#',
-            buttonText: 'Detalhes',
-          },
-          {
-            category: 'Alagamento',
-            title: 'Alagamento em Estrada',
-            description:
-              'Estrada bloqueada por alagamento. Desvie sua rota para garantir segurança.',
-            image:
-              'https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-            link: '#',
-            buttonText: 'Rotas alternativas',
-          },
-          {
-            category: 'Enchente',
-            title: 'Enchente em Zona Rural',
-            description:
-              'Áreas rurais próximas ao rio enfrentam enchentes. Agricultores devem tomar precauções.',
-            image:
-              'https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-            link: '#',
-            buttonText: 'Ações recomendadas',
-          },
-        ]}
+        slides={data.data}
       />
 
       <AccordionFaq

@@ -1,7 +1,11 @@
+import { Post } from "@/services/post";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const Slider = ({ slides }: any) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  console.log("slides", slides)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,9 +29,9 @@ const Slider = ({ slides }: any) => {
   return (
     <div className="py-8">
       <div className="sliderAx h-auto">
-        {slides.map((slide: any, index:any) => (
+        {slides.map((slide: Post, index:any) => (
           <div
-            key={index}
+            key={slide.slug}
             className={`container mx-auto ${index === currentSlide ? "block" : "hidden"}`}
           >
             <div
@@ -36,17 +40,20 @@ const Slider = ({ slides }: any) => {
                 backgroundImage: `url(${slide.image})`,
               }}
             >
-              <div className="md:w-1/2">
-                <p className="font-bold text-sm uppercase">{slide.category}</p>
-                <p className="text-2xl mb-2 font-bold">{slide.title}</p>
-                <p className="text-xl mb-10 leading-none">{slide.description}</p>
-                <a
-                  href={slide.link}
-                  className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"
-                >
-                  {slide.buttonText}
-                </a>
+              <div className="md:w-1/2 bg-slate-50/30 mb-6 px-2">
+               <div className="py-2">
+               <p className="font-bold text-sm uppercase text-overlay">{slide.category}</p>
+                <p className="text-2xl mb-2 font-bold text-overlay">{slide.title}</p>
+                <p className="text-xl line-clamp-1  text-ellipsis text-overlay mb-10 h-10 leading-none">{slide.content}</p>
+               </div>
+               
               </div>
+              <Link
+                  href={`/noticias/${slide.slug}`} 
+                  className=" bg-gray-700 	py-4 px-8 text-white text-balance font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"
+                >
+                  Saiba mais
+                </Link>
             </div>
             <br />
           </div>

@@ -11,12 +11,7 @@ export const siteConfig = {
     {
       label: "Mapa",
       href: "/mapa",
-    },
-    {
-      label: "Noticias",
-      href: "/noticias",
-    },
-  
+    },  
     {
       label: "Sobre Nós",
       href: "/sobrenos",
