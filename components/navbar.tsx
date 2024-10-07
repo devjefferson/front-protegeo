@@ -82,7 +82,7 @@ export const Navbar = ({data}:{data: TCustomer}) => {
                       ? "danger"
                       : "foreground"
                 }
-                href="#"
+                href={item.href}
                 size="lg"
               >
                 {item.label}

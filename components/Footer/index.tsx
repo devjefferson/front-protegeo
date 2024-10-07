@@ -35,14 +35,14 @@ const Footer = ({ user }: { user: TCustomer }) => {
 
           <div className="flex mt-3 -mx-2 sm:mt-0">
             <a
-              href="#"
+              href="/sobrenos"
               className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
               aria-label="Teams"
             >
               Equipe
             </a>
 
-            <a
+            {/* <a
               href="#"
               className="mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
               aria-label="Privacy"
@@ -56,7 +56,7 @@ const Footer = ({ user }: { user: TCustomer }) => {
               aria-label="Cookies"
             >
               Cookies
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
