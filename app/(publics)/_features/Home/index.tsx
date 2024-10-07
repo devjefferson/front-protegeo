@@ -62,7 +62,15 @@ export default function Home({data, user}: {
       <Slider
         slides={data?.data as Post }
       />
-
+{!user && <Hero
+        title=""
+        description="Junte-se à nossa comunidade e tenha acesso a conteúdos exclusivos, ofertas especiais e muito mais! Ao se cadastrar, você ficará por dentro das novidades e ainda receberá dicas incríveis que vão facilitar o seu dia a dia."
+        sobText=""
+        aboutLink=""
+        aboutText=""
+        actionLink={user ? "/perfil" : "/cadastro"}
+        actionText={user ? "Perfil" : "Cadastra-se"}
+      />}
       <AccordionFaq
         questions={[
           {

@@ -35,13 +35,13 @@ export const Hero = ({
         </div>
         <div className="mx-auto max-w-2xl py-14 lg:py-28">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+           { sobText && <div className="relative rounded-full px-3 py-1 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               {sobText}
               <Link href={aboutLink} className="font-semibold">
                 <span className="absolute inset-0" aria-hidden="true"></span>
                 {aboutText} <span aria-hidden="true">&rarr;</span>
               </Link>
-            </div>
+            </div>}
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight  sm:text-6xl">
@@ -55,9 +55,9 @@ export const Hero = ({
               >
                 {actionText}
               </Link>
-              <Link href={aboutLink} className="text-sm font-semibold leading-6 ">
+              {aboutText &&<Link href={aboutLink} className="text-sm font-semibold leading-6 ">
                 {aboutText} <span aria-hidden="true">→</span>
-              </Link>
+              </Link>}
             </div>
           </div>
         </div>
