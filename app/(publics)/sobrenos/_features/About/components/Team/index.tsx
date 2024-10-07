@@ -3,19 +3,19 @@ const people = [
     name: 'Jefferson Fonseca',
     role: 'Dev. Front-End',
     imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      'https://avatars.githubusercontent.com/u/40128030?v=4',//botar img dinamica
   },
   {
-    name: 'Lucas',
+    name: 'Lucas Leonardo',
     role: 'Dev. Front-End',
     imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      'https://avatars.githubusercontent.com/u/169323606?v=4', //botar img dinamica
   },
   {
-    name: 'Leonardo',
+    name: 'Leonardo Alves',
     role: 'Dev. Front-End',
     imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      'https://avatars.githubusercontent.com/u/169725309?s=400&v=4',//botar img dinamica
   },
 
  

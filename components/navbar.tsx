@@ -70,7 +70,7 @@ export const Navbar = ({data}:{data: TCustomer}) => {
       </NavbarContent>
 
       <NavbarMenu>
-     
+      <Menu data={data} />
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
