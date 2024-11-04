@@ -1,5 +1,5 @@
 export type TCustomer = {
-  _id?: string
+  id?: string
   brandId?: string
   name: string
   surname: string

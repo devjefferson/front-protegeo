@@ -16,16 +16,21 @@ export const authOptions: AuthOptions = {
       },
       async authorize(credentials) {
         try {
+          
           const login = await signIn({
             email: credentials?.email || "",
             password: credentials?.password || "",
           });
 
-          if (login?.ok) {
-            const { token } = login;
-            const user = await getMe(token);
+          console.log(login)
 
-            if (user) return user;
+          if (login?.ok) {
+            if (login.data) {
+              return {
+                id: login.data.id || "",
+                ...login.data,
+              };
+            }
           }
 
           return null;

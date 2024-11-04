@@ -1,21 +1,9 @@
 "use client";
-
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { signOut } from "next-auth/react";
-
-
 export default function Perfil({ data }: any) {
-  const { mutate } = useMutation({
-    mutationKey: ["exit"],
-    mutationFn: async () => {
-      await signOut();
-    },
-  });
-
   return (
     <main className="flex min-h-screen flex-col  px-4">
         <div className="h-48 container  lg:h-auto ">
-          <h1 className="text-2xl font-bold mb-6">Dashboard Overview</h1>
+          <h1 className="text-2xl font-bold mb-6">{data.name} {data.surname}</h1>
 
           {/* Stats Cards */}
           <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-800">

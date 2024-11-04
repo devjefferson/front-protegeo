@@ -24,9 +24,21 @@ export default function ConsumerForm() {
   })
 
   const handleSubmit: SubmitHandler<TCustomer> = async (data) => {
-    await setMe(data)
+    await fetch('/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...data,
+        birthdate: data.birthdate.split('/').reverse().join('-'),
+        acceptTermsPrivacyPolicy: 'true',
+        acceptMediaConsent: 'true'
+        
+      }),
+    })
     success("cadastrado realizado com sucesso.")
-    push('/login')
+    // push('/login')
   }
 
   return (
