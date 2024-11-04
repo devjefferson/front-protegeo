@@ -22,7 +22,7 @@ export const authOptions: AuthOptions = {
             password: credentials?.password || "",
           });
 
-          console.log(login)
+          
 
           if (login?.ok) {
             if (login.data) {

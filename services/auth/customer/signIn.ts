@@ -14,7 +14,7 @@ export default async function signIn({
 
 
 
-  const data = await fetch('http://localhost:3000/api/signin', {
+  const data = await fetch(`${process.env.NEXTAUTH_URL}/api/signin`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
