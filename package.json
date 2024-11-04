@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@hookform/resolvers": "^3.9.0",
 		"@mapbox/mapbox-gl-geocoder": "^5.0.2",
+		"@mapbox/search-js-react": "^1.0.0-beta.22",
 		"@nextui-org/button": "2.0.37",
 		"@nextui-org/code": "2.0.32",
 		"@nextui-org/input": "2.2.4",
