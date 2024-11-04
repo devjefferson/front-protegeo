@@ -1,5 +1,5 @@
+'use server'
 import { TCustomer } from "@/models/customer";
-import { getMe } from "@/services/me";
 
 export type TSignIn = {
   email: string;
@@ -14,7 +14,7 @@ export default async function signIn({
 
 
 
-  const data = await fetch(`${process.env.NEXTAUTH_URL}/api/signin`, {
+  const data = await fetch(`https://front-protegeo.vercel.app/api/signin`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
