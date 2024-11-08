@@ -21,8 +21,8 @@ export const FormOccurrence = () => {
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col justify-center">
 
-      <div className="flex gap-4">
-        <div className="flex w-full h-full">
+      <div className="grid lg:grid-cols-2 grid-cols-1  gap-4">
+        <div className="flex w-full h-[350px] lg:h-[calc(100vh-64px)] lg:h-full">
           <MapGeoCoder
             onChanger={(e) => {
               form.setValue('end', e.place_name);
@@ -32,7 +32,7 @@ export const FormOccurrence = () => {
             }}
           />
         </div>
-        <div className="w-1/2 flex flex-col gap-4 py-16 px-4">
+        <div className="w-full flex flex-col gap-4 py-16 px-4">
         <h1 className="text-white font-bold text-2xl text-center">Formulário de ocorrência</h1>
           <Controller
             name="end"

@@ -45,7 +45,7 @@ const MapGeoCoder = ({
 
  
 
-  return <div ref={mapContainerRef} style={{ height: 'calc(100vh - 64px)', width: '100%' }} />;
+  return <div ref={mapContainerRef} style={{ height: '100%', width: '100%' }} />;
 };
 
 export default MapGeoCoder;
