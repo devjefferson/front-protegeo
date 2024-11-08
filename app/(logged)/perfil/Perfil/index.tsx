@@ -1,4 +1,5 @@
 "use client";
+
 export default function Perfil({ data }: any) {
   return (
     <main className="flex min-h-screen flex-col  px-4">

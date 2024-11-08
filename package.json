@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@hookform/resolvers": "^3.9.0",
 		"@mapbox/mapbox-gl-geocoder": "^5.0.2",
+		"@mapbox/mapbox-sdk": "^0.16.1",
 		"@mapbox/search-js-react": "^1.0.0-beta.22",
 		"@nextui-org/button": "2.0.37",
 		"@nextui-org/code": "2.0.32",
@@ -46,7 +47,8 @@
 		"react-hook-form": "^7.53.0",
 		"react-toastify": "^10.0.5",
 		"vanilla-masker": "^1.2.0",
-		"zod": "^3.23.8"
+		"zod": "^3.23.8",
+		"@keyv/redis": "^2.8.5"
 	},
 	"devDependencies": {
 		"@types/mapbox__mapbox-gl-geocoder": "^5.0.0",

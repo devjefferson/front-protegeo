@@ -4,6 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import getCurrentUser from "./customer/getCurrentUser";
 import getMe from "./customer/getMe";
 import signIn from "./customer/signIn";
+import { setMe } from "../me";
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -22,10 +23,13 @@ export const authOptions: AuthOptions = {
             password: credentials?.password || "",
           });
 
+         
+
           
 
           if (login?.ok) {
             if (login.data) {
+              setMe(login.data)
               return {
                 id: login.data.id || "",
                 ...login.data,
