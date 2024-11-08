@@ -6,7 +6,9 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
-const MapGeoCoder = () => {
+const MapGeoCoder = ({
+  onChanger
+}:{onChanger: (e: any)=> void}) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
 
@@ -25,7 +27,7 @@ const MapGeoCoder = () => {
         accessToken: mapboxgl.accessToken,
         mapboxgl: mapboxgl as any,
         getItemValue: (item) => {
-          console.log(item)
+          onChanger(item)
           
           return item.place_name
         },
@@ -43,7 +45,7 @@ const MapGeoCoder = () => {
 
  
 
-  return <div ref={mapContainerRef} style={{ height: '100vh' }} />;
+  return <div ref={mapContainerRef} style={{ height: 'calc(100vh - 64px)', width: '100%' }} />;
 };
 
 export default MapGeoCoder;
