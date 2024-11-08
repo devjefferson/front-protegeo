@@ -22,7 +22,7 @@ export const FormOccurrence = () => {
     <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col justify-center">
 
       <div className="grid lg:grid-cols-2 grid-cols-1  gap-4">
-        <div className="flex w-full h-[350px] lg:h-[calc(100vh-64px)] lg:h-full">
+        <div className="flex w-full h-[350px] lg:h-[calc(100vh-64px)]">
           <MapGeoCoder
             onChanger={(e) => {
               form.setValue('end', e.place_name);
