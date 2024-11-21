@@ -3,9 +3,7 @@ import { Inter } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 
 import getCurrentUser from "@/services/auth/customer/getCurrentUser";
-import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Projeto de Astronomia",
