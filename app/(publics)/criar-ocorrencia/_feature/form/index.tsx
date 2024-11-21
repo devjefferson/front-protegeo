@@ -39,10 +39,11 @@ export const FormOccurrence = ({user}:{user: TCustomer}) => {
       ),
     })
 
+    form.reset(['title', 'description', 'hour', 'street', 'lng', 'lat'])
+
     success("cadastrado realizado com sucesso.")
   }
 
-  console.log(form.formState.errors)
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)} className="flex flex-col justify-center">
 
