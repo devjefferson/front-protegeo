@@ -1,12 +1,10 @@
 'use server'
+import { Api } from "@/services/axios";
 import MapAndList from "./_features/MapAndList";
 
 export default async function Page(){
-
-  const data = await fetch('https://front-protegeo.vercel.app/api/list-occurrence')
-
-  const rows = (await data.json()).rows
-
+  const data = await Api('/api/list-occurrence')
+  const rows = data.data.rows
   return(
          <MapAndList data={rows} />
       
