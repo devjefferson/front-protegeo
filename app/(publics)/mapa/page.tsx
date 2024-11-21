@@ -1,12 +1,28 @@
 'use serve'
 import { Api } from "@/services/axios";
 import MapAndList from "./_features/MapAndList";
+import { createClient } from '@vercel/postgres';
 
 export default async function Page(){
-  const data = await Api('/api/list-occurrence' + '?date=' + new Date().toISOString())
-  const rows = data.data.rows
+
+
+ 
+async function queryPosts() {
+  const client = createClient();
+  await client.connect();
+ 
+  try {
+    const { rows } =
+      await client.sql`SELECT * FROM ocorrencias;`;
+      return rows
+  } finally {
+    await client.end();
+  }
+}
+
+  const rows = await queryPosts();
   return(
-         <MapAndList data={rows} />
+         <MapAndList data={rows as any} />
       
     )
 }
