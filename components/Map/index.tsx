@@ -2,9 +2,8 @@
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { dataCoord } from './coord';
 
-const MapboxExample = ({coord}: {coord: number[]}) => {
+const MapboxExample = ({coord, dataCoord}: {coord: number[], dataCoord:any}) => {
   const mapContainerRef = useRef() as any
   const mapRef  = useRef() as any
 
