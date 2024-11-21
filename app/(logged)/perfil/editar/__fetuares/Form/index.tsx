@@ -12,6 +12,9 @@ import { Input } from '@/components/Input'
 import { title } from '@/components/primitives'
 import useMessage from '@/hooks/useMessage'
 import { setMe } from '@/services/me'
+import { format, addHours } from "date-fns";
+
+
 
 
 
@@ -20,12 +23,28 @@ export default function ConsumerForm({data}:{data: TCustomer}) {
   const {success} = useMessage()
   const form = useForm<TCustomer>({
     resolver: zodResolver(ConsumerFormEditSchema),
-    defaultValues: data,
+    defaultValues: {...data, 
+      birthdate: format(addHours(new Date(data.birthdate), 4), "dd/MM/yyyy"),
+      zipCode: data?.zip_code,
+    },
   })
 
   const handleSubmit: SubmitHandler<TCustomer> = async (data) => {
-    await setMe(data)
-    success("cadastrado editado com sucesso.")
+    await fetch('/api/update', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...data,
+        birthdate: data.birthdate.split('/').reverse().join('-'),
+        acceptTermsPrivacyPolicy: 'true',
+        acceptMediaConsent: 'true'
+        
+      }),
+    })
+    success("Atualizado com sucesso.")
+    
     push('/perfil')
   }
 

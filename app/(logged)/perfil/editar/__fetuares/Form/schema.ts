@@ -4,6 +4,8 @@ import { cpf } from 'cpf-cnpj-validator';
 
 
 export const ConsumerFormEditSchema = zod.object({
+  id: zod
+  .number().optional(),
   birthdate: zod
     .string({ required_error: 'O campo é obrigatório.' })
     .refine((v = '') => {

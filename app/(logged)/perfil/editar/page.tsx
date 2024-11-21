@@ -4,7 +4,6 @@ export default async function Page() {
 
   const data = await getMe()
 
-  console.log(data)
 
   return (
     <div  className="relative" >

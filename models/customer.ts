@@ -10,7 +10,8 @@ export type TCustomer = {
   password?: string
   passwordConfirmation?: string
   oldPassword?: string
-  zipCode: string
+  zipCode?: string
+  zip_code: string
   gender: string
   street: string
   complement: string
