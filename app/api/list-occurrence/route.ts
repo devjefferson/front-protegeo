@@ -4,10 +4,10 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function GET(request: NextRequest) {
   const query = `SELECT * FROM ocorrencias;`;
 
-  const rows = (await sql.query(query)).rows;
+  const data = (await sql.query(query));
 
   return NextResponse.json({
-    rows: rows,
+    rows: data.rows,
     ok: true,
   });
 }

@@ -32,7 +32,6 @@
 		"@tanstack/react-query": "^5.56.2",
 		"@types/crypto-js": "^4.2.2",
 		"@vercel/postgres": "^0.10.0",
-		"axios": "^1.7.7",
 		"classnames": "^2.5.1",
 		"clsx": "2.1.1",
 		"cpf-cnpj-validator": "^1.0.3",

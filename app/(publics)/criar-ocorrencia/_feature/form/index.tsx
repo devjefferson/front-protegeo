@@ -7,6 +7,7 @@ import MapGeoCoder from "@/components/MapGeoCoder"
 import { Button } from "@nextui-org/button"
 import useMessage from "@/hooks/useMessage"
 import { TCustomer } from "@/models/customer"
+import { servicesCreatedOcorrence } from "@/services/Occorrence"
 
 export const FormOccurrence = ({user}:{user: TCustomer}) => {
   const {success} = useMessage()
@@ -22,21 +23,13 @@ export const FormOccurrence = ({user}:{user: TCustomer}) => {
   
 
   const handleSubmit = async (data: any) => {
-    await fetch('/api/created-occurrence', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(
-        {
-          ...data,
-          user_id: user.id,
-          visit_count: 0,
-          likes: 0
-          
-        }
-        
-      ),
+   
+   await servicesCreatedOcorrence( {
+      ...data,
+      user_id: user.id,
+      visit_count: 0,
+      likes: 0
+      
     })
 
     form.reset(['title', 'description', 'hour', 'street', 'lng', 'lat'])

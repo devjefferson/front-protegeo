@@ -23,13 +23,7 @@ export const AnalitcsCards = ({ data }: PropsPerfil) => {
           icon: 'MdOutlineAnalytics',
         }}
       />
-      <CardInfoAnalitcs
-        item={{
-          title: 'Minha Paginas',
-          value: data?.countCatalogs || 0,
-          icon: 'MdOutlineAnalytics',
-        }}
-      />
+    
 
     </div>
   );
