@@ -43,7 +43,6 @@ export default function MapAndList({data}:{data: TOccurrence[]}){
  
 }
 
-console.log(data)
 
 
 const handleClickCountOccorrence = async (id: number, value: number, userId: number) => {
@@ -54,24 +53,24 @@ const handleClickCountOccorrence = async (id: number, value: number, userId: num
 }
 
   return   (
-  <section className="flex justify-between">
-    <div className="flex relative w-full h-full">
+  <section className="grid lg:grid-cols-3 gap-2  justify-between">
+    <div className="flex relative w-full h-full col-span-2">
 
         {<MapboxExample coord={coord} dataCoord={dataCoord} />}
         </div>
-      <div className="w-[700px] flex flex-col overflow-y-scroll overflow-x-hidden  items-center ">
+      <div className="flex flex-col lg:overflow-y-scroll lg:overflow-x-hidden ">
       <div onClick={()=> push('/criar-ocorrencia')} className={classNames([
             'cursor-pointer',
             'flex',
             'shadow-md',
             'justify-center',
             'items-center',
-            
-            'bg-white', 'p-3', 'py-5', 'lg:w-[431px]','gap-2'])}> 
+            'w-full',
+            'bg-white', 'p-3', 'py-5','gap-2'])}> 
             <IconComponent name="plus" color="black"  />
               <h3 className="text-black cursor-pointer text-center">Criar nova ocorrencia</h3>
             </div>
-      { <div  className= "flex pt-4 flex-col mx-2 gap-4 h-[calc(100vh-138px)] w-[700px] overflow-y-scroll overflow-x-hidden  items-center ">
+      { <div  className= "flex pt-4 flex-col mx-2 gap-4 h-[calc(100vh-138px)]   items-center ">
       
 
         {data.map((item)=>{

@@ -50,7 +50,6 @@ const values = [
 
    const rows = await sql.query(query, values)
 
-   console.log(rows)
   return NextResponse.json({
     rows
   });

@@ -6,7 +6,6 @@ import { servicesOccorrrenceGetAll } from "@/services/Occorrence";
 export default async function Page(){
 
   const rows = await servicesOccorrrenceGetAll()
-  console.log(rows)
 
   return(
          <MapAndList data={rows.rows as any} />

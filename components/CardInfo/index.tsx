@@ -19,7 +19,7 @@ export const CardInfo = ({
             'cursor-pointer',
             'flex',
             'shadow-md',
-            'bg-white', 'p-3', 'lg:w-[431px]','gap-2'])}>
+            'bg-white', 'p-3',  'w-full','gap-2'])}>
             <div className={classNames([
                 'min-w-[158px]', 'h-full', 'lg:flex hidden'
             ])}>

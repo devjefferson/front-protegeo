@@ -20,10 +20,10 @@ export default function Perfil({ data, rows }: any) {
   }
 
   return (
-    <main className="flex min-h-screen flex-col  px-4">
+    <main className="flex min-h-screen flex-col pt-5  px-4">
         <div className="h-48 container  lg:h-auto ">
-          <h1 className="text-2xl font-bold mb-6">{data.name} {data.surname}</h1>
-
+          
+        <h1 className="text-2xl font-bold mb-6">Seja bem vindo <br/> {data.name} {data.surname}!</h1>
           
       <AnalitcsCards data={{
         visit: count,
@@ -31,9 +31,11 @@ export default function Perfil({ data, rows }: any) {
       }} />
           
 
+          <h1 className="text-2xl font-bold mb-6 pt-5">Lista de ocorrências</h1>
+
           {/* Charts Section */}
           <div className="mt-8 flex flex-col gap-2" >
-          {rows.map((item: any)=>{return  <CardInfo key={item.id} description={item.description} street={item.street} cityOfState={item.title} onClick={()=> {
+          {rows.map((item: any)=>{return  <CardInfo date={item.hour} key={item.id} description={item.description} street={item.street} cityOfState={item.title} onClick={()=> {
             handleDelete(item.id, item.user_id)
           }}/>})}
           </div>

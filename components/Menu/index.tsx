@@ -12,8 +12,14 @@ import {
 } from '@nextui-org/react';
 import { signOut } from 'next-auth/react';
 import { TCustomer } from '@/models/customer';
+import { deleteMe } from '@/services/me';
 
 export default function Menu({ data }: { data: TCustomer }) {
+
+  const handleDelete = async () => {
+    await deleteMe()
+    signOut();
+  }
   return (
     <Dropdown placement="bottom-start">
       <DropdownTrigger>
@@ -66,8 +72,8 @@ export default function Menu({ data }: { data: TCustomer }) {
             key="logout"
             color="danger"
             onClick={() => {
-             
-              signOut();
+              handleDelete()
+              
             }}
           >
             Sair
