@@ -8,9 +8,11 @@ import { Button } from "@nextui-org/button"
 import useMessage from "@/hooks/useMessage"
 import { TCustomer } from "@/models/customer"
 import { servicesCreatedOcorrence } from "@/services/Occorrence"
+import { useRouter } from "next/navigation"
 
 export const FormOccurrence = ({user}:{user: TCustomer}) => {
   const {success} = useMessage()
+  const {push} = useRouter()
 
   const form = useForm<any>({
     resolver: zodResolver(SchemaFormOccurence),
@@ -33,8 +35,10 @@ export const FormOccurrence = ({user}:{user: TCustomer}) => {
     })
 
     form.reset(['title', 'description', 'hour', 'street', 'lng', 'lat'])
+ 
+    success("ocorrência cadastrada com sucesso.")
 
-    success("cadastrado realizado com sucesso.")
+    push('/mapa')
   }
 
   return (

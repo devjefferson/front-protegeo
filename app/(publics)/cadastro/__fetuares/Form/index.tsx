@@ -24,7 +24,7 @@ export default function ConsumerForm() {
   })
 
   const handleSubmit: SubmitHandler<TCustomer> = async (data) => {
-    await fetch('https://front-protegeo.vercel.app/api/signup', {
+    await fetch(`${process.env.NEXTAUTH_URL}/api/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
