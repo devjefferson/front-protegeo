@@ -14,7 +14,7 @@ export default async function Page() {
     return;
   }
 
-  const rows = user.id === 13 ? (await servicesOccorrrenceGetAll()).rows : await servicesOccorrrenceGetAllUser(Number(user.id))
+  const rows = Number(user.id) === 13 ? (await servicesOccorrrenceGetAll()).rows : await servicesOccorrrenceGetAllUser(Number(user.id))
  
 
 
