@@ -4,7 +4,7 @@ import getCurrentUser from "@/services/auth/customer/getCurrentUser";
 import { createClient } from "@vercel/postgres";
 
 import { redirect } from "next/navigation";
-import { servicesOccorrrenceGetAllUser } from "@/services/Occorrence";
+import { servicesOccorrrenceGetAll, servicesOccorrrenceGetAllUser } from "@/services/Occorrence";
 
 export default async function Page() {
   const user  = await getCurrentUser() as TCustomer
@@ -14,7 +14,7 @@ export default async function Page() {
     return;
   }
 
-  const rows = await servicesOccorrrenceGetAllUser(Number(user.id))
+  const rows = user.id === 13 ? (await servicesOccorrrenceGetAll()).rows : await servicesOccorrrenceGetAllUser(Number(user.id))
  
 
 
