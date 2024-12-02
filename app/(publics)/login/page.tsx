@@ -21,7 +21,7 @@ export default async function Page() {
       
    <div className='w-96'>
    <div className='flex gap-2 mb-6 justify-center'>
-     <Logo />
+   <img src='/logo.svg' className="h-8 w-8" />
       <h1 className={title({
        size: 'sm',
       })}>ProteGeo</h1>
