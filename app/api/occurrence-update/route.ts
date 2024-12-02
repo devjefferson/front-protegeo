@@ -15,11 +15,8 @@ const values = [
   req.id,
   req.user_id
 ];
-
    const rows = await sql.query(query, values)
 
-
-  
   return NextResponse.json({
     rows
   });

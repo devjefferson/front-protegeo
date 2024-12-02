@@ -1,13 +1,15 @@
 import { sql } from '@vercel/postgres';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
+
+
+export async function POST(request: NextRequest) {
   const query = `SELECT * FROM ocorrencias;`;
 
-  const data = (await sql.query(query));
+  
+  
+  const rows = await sql.query(query)
+  
 
-  return NextResponse.json({
-    rows: data.rows,
-    ok: true,
-  });
+  return NextResponse.json({rows});
 }

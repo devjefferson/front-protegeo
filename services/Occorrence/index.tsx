@@ -12,6 +12,7 @@ export const servicesOccorrrence =  async (value: number, id: number, userId:num
     
     
   })
+  revalidateTag("occurrenceFetchGetAllUser")
   revalidateTag("occurrenceFetchGetAll")
 }
 export const servicesOccorrrenceGetAllUser =  async (userId:number)=>{
@@ -36,15 +37,16 @@ export const servicesOccorrrenceGetAllUser =  async (userId:number)=>{
 
 export const servicesOccorrrenceGetAll =  async ()=>{
    const data = await fetch(`${process.env.NEXTAUTH_URL}/api/list-occurrence`, {
-    method: 'GET',
+    method: 'POST',
     next: {
-     
       tags: ['occurrenceFetchGetAll'],
     },
     
   })
+
+ 
   
-   return await data.json()
+   return  await data.json()
 }
 
 export const servicesCreatedOcorrence = async (data: any)=>{
@@ -58,6 +60,7 @@ export const servicesCreatedOcorrence = async (data: any)=>{
     ),
    
   })
+  revalidateTag("occurrenceFetchGetAllUser")
   revalidateTag("occurrenceFetchGetAll")
 }
 

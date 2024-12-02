@@ -2,12 +2,9 @@
 import { CardInfo } from "@/components/CardInfo";
 import IconComponent from "@/components/Icon";
 import MapboxExample from "@/components/Map";
-import { dataCoord } from "@/components/Map/coord";
 import { TOccurrence } from "@/models/occorrencia";
 import { servicesOccorrrence } from "@/services/Occorrence";
-import { Button } from "@nextui-org/button";
-import { user } from "@nextui-org/theme";
-import { createClient } from "@vercel/postgres";
+
 import classNames from "classnames";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

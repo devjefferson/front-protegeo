@@ -17,16 +17,10 @@ export const authOptions: AuthOptions = {
       },
       async authorize(credentials) {
         try {
-          
           const login = await signIn({
             email: credentials?.email || "",
             password: credentials?.password || "",
           });
-
-         
-
-          
-
           if (login?.ok) {
             if (login.data) {
               setMe(login.data)
@@ -36,13 +30,13 @@ export const authOptions: AuthOptions = {
               };
             }
           }
-
           return null;
         } catch (error) {
           return null;
         }
       },
     }),
+
     CredentialsProvider({
       id: "refresh-user",
       name: "refresh-user",

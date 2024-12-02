@@ -7,8 +7,10 @@ export default async function Page(){
 
   const rows = await servicesOccorrrenceGetAll()
 
+
+
   return(
-         <MapAndList data={rows.rows as any} />
+         <MapAndList data={rows.rows.rows as any} />
         
       
     )
