@@ -12,33 +12,34 @@ import { Input } from '@/components/Input'
 import { title } from '@/components/primitives'
 import useMessage from '@/hooks/useMessage'
 import { setMe } from '@/services/me'
+import { signUp } from '@/services/auth/customer/signIn'
 
 
 
 export default function ConsumerForm() {
   const { back, push } = useRouter()
-  const {success} = useMessage()
+  const {success, error} = useMessage()
   const form = useForm<TCustomer>({
     resolver: zodResolver(ConsumerFormEditSchema),
     defaultValues: {},
   })
 
   const handleSubmit: SubmitHandler<TCustomer> = async (data) => {
-    await fetch(`${process.env.NEXTAUTH_URL}/api/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        ...data,
-        birthdate: data.birthdate.split('/').reverse().join('-'),
-        acceptTermsPrivacyPolicy: 'true',
-        acceptMediaConsent: 'true'
-        
-      }),
-    })
-    success("cadastrado realizado com sucesso.")
-    // push('/login')
+
+   
+      const response = await signUp({
+        data
+      })
+
+      if(response?.ok === false){
+         error(response.message)
+         return
+      }
+    
+        success('Cadastro realizado com sucesso')
+        push('/login')
+     
+   
   }
 
   return (
