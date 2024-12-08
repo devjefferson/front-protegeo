@@ -15,7 +15,7 @@ export default function Perfil({ data, rows }: any) {
 
   const handleDelete = async (id: number, userId: number) => {
 
-    await servicesOcorrenceDelete(id, userId)
+    await servicesOcorrenceDelete(id, userId, data.email)
 
   }
 

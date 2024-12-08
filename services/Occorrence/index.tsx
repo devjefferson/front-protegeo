@@ -1,5 +1,6 @@
 'use server'
 import { revalidateTag } from "next/cache"
+import eventLogs from "../log"
 
 export const servicesOccorrrence =  async (value: number, id: number, userId:number)=>{
   await fetch(`${process.env.NEXTAUTH_URL}/api/occurrence-update`, {
@@ -60,11 +61,16 @@ export const servicesCreatedOcorrence = async (data: any)=>{
     ),
    
   })
+  await eventLogs({
+    user_id: data.user_id,
+    email: data.email,
+    event_type: 'created-occurrence'  })
+
   revalidateTag("occurrenceFetchGetAllUser")
   revalidateTag("occurrenceFetchGetAll")
 }
 
-export const servicesOcorrenceDelete = async (id: number, userId: number)=>{
+export const servicesOcorrenceDelete = async (id: number, userId: number, email: string)=>{
   await fetch(`${process.env.NEXTAUTH_URL}/api/occurrence-delete`, {
     method: 'POST',
     headers: {
@@ -78,6 +84,11 @@ export const servicesOcorrenceDelete = async (id: number, userId: number)=>{
     ),
    
   })
+  await eventLogs({
+    user_id: userId,
+    email: email,
+    event_type: 'delete-occurrence'  })
+
   revalidateTag("occurrenceFetchGetAllUser")
   revalidateTag("occurrenceFetchGetAll")
 }

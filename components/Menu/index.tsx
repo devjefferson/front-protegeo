@@ -13,10 +13,19 @@ import {
 import { signOut } from 'next-auth/react';
 import { TCustomer } from '@/models/customer';
 import { deleteMe } from '@/services/me';
+import eventLogs from '@/services/log';
+import classNames from 'classnames';
 
 export default function Menu({ data }: { data: TCustomer }) {
 
   const handleDelete = async () => {
+    await eventLogs(
+      {
+        user_id: Number(data.id),
+        email: data.email,
+        event_type: 'logout',
+      }
+    )
     await deleteMe()
     signOut();
   }
@@ -55,6 +64,9 @@ export default function Menu({ data }: { data: TCustomer }) {
           key="perfil"
         >
           {data ? 'Meu Perfil' : 'Login'}
+        </DropdownItem>
+         <DropdownItem className={classNames([Number(data?.id) !== 13 ? 'hidden' : 'block'])} href='/perfil/logs'>
+           Logs
         </DropdownItem>
         <DropdownItem
           textValue="path"

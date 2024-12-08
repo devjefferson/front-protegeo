@@ -1,5 +1,6 @@
 'use server'
 import { TCustomer } from "@/models/customer";
+import eventLogs from "@/services/log";
 
 export type TSignIn = {
   email: string;
@@ -27,6 +28,13 @@ export default async function signIn({
 
   
     const datas = await data.json()
+  
+
+    await eventLogs({
+      user_id: datas.rows.id,
+      email: datas.rows.email,
+      event_type: 'login'
+    })
 
     return{
       token: '1121321321231321321321321',
@@ -48,10 +56,7 @@ export  async function signUp({
   data: any
 }): Promise<{  ok: boolean, message: string} | undefined> {
 
-
-
-  
-    const datas = await fetch(`${process.env.NEXTAUTH_URL}/api/signup`, {
+const datas = await fetch(`${process.env.NEXTAUTH_URL}/api/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

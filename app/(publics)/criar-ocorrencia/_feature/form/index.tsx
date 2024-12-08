@@ -28,6 +28,7 @@ export const FormOccurrence = ({user}:{user: TCustomer}) => {
    
    await servicesCreatedOcorrence( {
       ...data,
+      email: user.email,
       user_id: user.id,
       visit_count: 0,
       likes: 0

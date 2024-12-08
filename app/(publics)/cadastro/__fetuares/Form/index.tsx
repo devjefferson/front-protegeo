@@ -25,21 +25,16 @@ export default function ConsumerForm() {
   })
 
   const handleSubmit: SubmitHandler<TCustomer> = async (data) => {
-
-   
       const response = await signUp({
         data
       })
-
+      
       if(response?.ok === false){
          error(response.message)
          return
       }
-    
         success('Cadastro realizado com sucesso')
         push('/login')
-     
-   
   }
 
   return (
