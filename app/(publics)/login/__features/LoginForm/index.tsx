@@ -48,7 +48,7 @@ export const LoginForm = () => {
   const handleSendEmail = async (data: any) => {
      
         const sendData = await servicesSendEmail({
-          email: 'drpcscan@gmail.com',
+          email: data.email,
           message: 'Olá, tudo bem?',
           name: 'Daniel'
         })
