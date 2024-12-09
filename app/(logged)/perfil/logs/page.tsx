@@ -44,5 +44,7 @@ export default async function Page() {
 
   const logs = await servicesGetAllLogs()
 
+
+
   return <List data={logs.rows} />;
 }

@@ -1,8 +1,13 @@
 'use client'
 
+import { servicesSendEmail } from "@/services/email"
 import { format } from "date-fns"
+import { useEffect } from "react"
 
 export const List = ({data}:{data: any[]})=>{
+
+
+
   return(
    <div className=" container py-8">
      <div className="grid grid-cols-1 gap-2 mb-4">
@@ -22,8 +27,8 @@ export const List = ({data}:{data: any[]})=>{
     </div>
   
      <div className="grid grid-cols-1 gap-2">{
-    data.map((item: any)=> (<div className="bg-white text-black p-5">
-      <div className="flex justify-between gap-6">
+    data.map((item: any)=> (<div key={item.log_id} className="bg-white text-black p-5">
+      <div  className="flex justify-between gap-6">
       <p>{item.log_id}</p>
         <div className="flex flex-1">
         <h2>{item.email}</h2>
