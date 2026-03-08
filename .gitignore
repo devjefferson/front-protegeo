@@ -14,7 +14,9 @@
 
 # production
 /build
-
+/.claude
+/.opencode
+/.windsurf
 # misc
 .DS_Store
 *.pem
